@@ -28,7 +28,7 @@ export default [{
 	input: './cmd/index.ts',
 	output: [
 		{
-			file: pkg.bin['moment-guess'],
+			file: pkg.bin['datetimeformat-guess'],
 			format: 'cjs',
 			name: 'MomentGuess',
 			banner: '#!/usr/bin/env node',

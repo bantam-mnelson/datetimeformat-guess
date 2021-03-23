@@ -1,14 +1,14 @@
-<h1 align="center">Welcome to moment-guess 👋<br> <img src="./logo.png" /></h1>
+<h1 align="center">Welcome to datetimeformat-guess 👋<br> <img src="./logo.png" /></h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.2.1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/apoorv-mishra/moment-guess#readme" target="_blank">
+  <a href="https://github.com/bantam-mnelson/datetimeformat-guess#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/apoorv-mishra/moment-guess/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/bantam-mnelson/datetimeformat-guess/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/apoorv-mishra/moment-guess/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/apoorv-mishra/moment-guess" />
+  <a href="https://github.com/bantam-mnelson/datetimeformat-guess/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/bantam-mnelson/datetimeformat-guess" />
   </a>
 </p>
 
@@ -22,23 +22,23 @@
 
 ```sh
 # output default format
-npx moment-guess --date "Fri, January 30th 2020, 10:00 AM"
+npx datetimeformat-guess --date "Fri, January 30th 2020, 10:00 AM"
 
 # output strftime format
-npx moment-guess --date "31st Dec, 2020" --format strftime
+npx datetimeformat-guess --date "31st Dec, 2020" --format strftime
 ```
-For details, try `npx moment-guess --help`
+For details, try `npx datetimeformat-guess --help`
 
 #### 📝 Note: The above commands DO NOT INSTALL the package system-wide, *npx* is just a [package runner](https://blog.npmjs.org/post/162869356040/introducing-npx-an-npm-package-runner).
 
 ### 📦 Package
 
 ```sh
-npm install moment-guess
+npm install datetimeformat-guess
 ```
 
 ```javascript
-const guessFormat = require('moment-guess');
+const guessFormat = require('datetimeformat-guess');
 
 // default format
 console.log(guessFormat("31/12/2020")); // DD/MM/YYYY
@@ -75,7 +75,7 @@ try {
 - *Fri, January 30th 2020, 10:00 AM*(dow, dd Mon yyyy[, hh:mm:ss am|pm|AM|PM] with both short and long names)
 
 ## 🤷‍♀️ What happens in case of ambiguous input?
-If the input is ambiguous like 01/01/2020(could mean DD/MM/YYYY or MM/DD/YYYY), **it would display all possible matched formats**. Try `npx -q moment-guess -d "01/01/2020"`
+If the input is ambiguous like 01/01/2020(could mean DD/MM/YYYY or MM/DD/YYYY), **it would display all possible matched formats**. Try `npx -q datetimeformat-guess -d "01/01/2020"`
 
 ## :thinking: Motivation
 
@@ -106,12 +106,12 @@ Entire module is split up into three main components, _parsers_, _refiners_ and 
 
 **Apoorv Mishra**
 
-* Github: [@apoorv-mishra](https://github.com/apoorv-mishra)
-* LinkedIn: [Apoorv Mishra](https://www.linkedin.com/in/apoorv-mishra-76a06249/)
+* Github: [@bantam-mnelson](https://github.com/bantam-mnelson)
+* LinkedIn: [Apoorv Mishra](https://www.linkedin.com/in/bantam-mnelson-76a06249/)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/apoorv-mishra/moment-guess/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/bantam-mnelson/datetimeformat-guess/issues). 
 
 ## Show your support
 
@@ -123,8 +123,8 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2020 [Apoorv Mishra](https://github.com/apoorv-mishra).<br />
-This project is [MIT](https://github.com/apoorv-mishra/moment-guess/blob/master/LICENSE) licensed.
+Copyright © 2020 [Apoorv Mishra](https://github.com/bantam-mnelson).<br />
+This project is [MIT](https://github.com/bantam-mnelson/datetimeformat-guess/blob/master/LICENSE) licensed.
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

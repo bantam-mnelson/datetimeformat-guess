@@ -1,19 +1,19 @@
 {
-  "name": "moment-guess",
+  "name": "datetimeformat-guess",
   "version": "1.2.1",
   "description": "A utility package for guessing date's format",
-  "homepage": "https://github.com/apoorv-mishra/moment-guess#readme",
+  "homepage": "https://github.com/bantam-mnelson/datetimeformat-guess#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apoorv-mishra/moment-guess.git"
+    "url": "git+https://github.com/bantam-mnelson/datetimeformat-guess.git"
   },
   "bugs": {
-    "url": "https://github.com/apoorv-mishra/moment-guess/issues"
+    "url": "https://github.com/bantam-mnelson/datetimeformat-guess/issues"
   },
   "main": "dist/bundle.js",
   "module": "dist/bundle.esm.js",
   "bin": {
-    "moment-guess": "bin/bundle.cmd.js"
+    "datetimeformat-guess": "bin/bundle.cmd.js"
   },
   "scripts": {
     "test": "jest",

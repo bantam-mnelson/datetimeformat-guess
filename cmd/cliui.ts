@@ -21,21 +21,21 @@ export function display(message: string): void {
 export function showHelp(): void {
 	console.log(
 	chalk`
-	{bold.cyan moment-guess} - {blue Utility for guessing date's format}
+	{bold.cyan datetimeformat-guess} - {blue Utility for guessing date's format}
 
 	{bold USAGE}
 
-	{bold $} {cyan npx moment-guess} --date {yellow 2020-10-10}
-	{bold $} {cyan npx moment-guess} --date "{yellow 31st Dec, 2020}" --format {blue default}
-	{bold $} {cyan npx moment-guess} --date "{yellow Mon, 06 Mar 2017 21:00:00 +0000}" --format {blue strftime}
-	{bold $} {cyan npx moment-guess} --version
-	{bold $} {cyan npx moment-guess} --help
+	{bold $} {cyan npx datetimeformat-guess} --date {yellow 2020-10-10}
+	{bold $} {cyan npx datetimeformat-guess} --date "{yellow 31st Dec, 2020}" --format {blue default}
+	{bold $} {cyan npx datetimeformat-guess} --date "{yellow Mon, 06 Mar 2017 21:00:00 +0000}" --format {blue strftime}
+	{bold $} {cyan npx datetimeformat-guess} --version
+	{bold $} {cyan npx datetimeformat-guess} --help
 
 	{bold OPTIONS}
 
 	-h, --help                          Shows this help message
 
-	-v, --version                       Displays the current version of moment-guess
+	-v, --version                       Displays the current version of datetimeformat-guess
 
 	-d, --date                          Displays the provided date's format
 
@@ -50,9 +50,9 @@ export function showUsage(): void {
 	chalk`
 	{bold USAGE}
 
-	{bold $} {cyan npx moment-guess} --date {yellow 2020-10-10}
-	{bold $} {cyan npx moment-guess} --version
-	{bold $} {cyan npx moment-guess} --help
+	{bold $} {cyan npx datetimeformat-guess} --date {yellow 2020-10-10}
+	{bold $} {cyan npx datetimeformat-guess} --version
+	{bold $} {cyan npx datetimeformat-guess} --help
 	`
 	);
 }
