@@ -1,83 +1,83 @@
 const guessFormat = require('../dist/bundle.js');
 
 describe('Slash, dot or dash delimited date formats', () => {
-	test('# YYYY/MM/DD', () => {
-		expect(guessFormat('2020/01/01')).toBe('YYYY/MM/DD');
+	test('# yyyy/MM/DD', () => {
+		expect(guessFormat('2020/01/01')).toBe('yyyy/MM/DD');
 		expect(guessFormat('2020/01/01', 'strftime')).toBe('%Y/%m/%d');
 	});
 
-	test('# YYYY/MM/DD HH:mm z', () => {
-		expect(guessFormat('2020/01/01 17:00 IST')).toBe('YYYY/MM/DD HH:mm z');
+	test('# yyyy/MM/DD HH:mm z', () => {
+		expect(guessFormat('2020/01/01 17:00 IST')).toBe('yyyy/MM/DD HH:mm z');
 		expect(guessFormat('2020/01/01 17:00 IST', 'strftime')).toBe('%Y/%m/%d %H:%M %Z');
 	});
 
-	test('# YYYY/MM/DD hh:mm A z', () => {
-		expect(guessFormat('2020/01/01 10:00 AM IST')).toBe('YYYY/MM/DD hh:mm A z');
+	test('# yyyy/MM/DD hh:mm A z', () => {
+		expect(guessFormat('2020/01/01 10:00 AM IST')).toBe('yyyy/MM/DD hh:mm a z');
 		expect(guessFormat('2020/01/01 10:00 AM IST', 'strftime')).toBe('%Y/%m/%d %I:%M %p %Z');
 	});
 
-	test('# YYYY/MM/DD h A z', () => {
-		expect(guessFormat('2020/01/01 1 AM IST')).toBe('YYYY/MM/DD h A z');
+	test('# yyyy/MM/DD h A z', () => {
+		expect(guessFormat('2020/01/01 1 AM IST')).toBe('yyyy/MM/DD h a z');
 		expect(guessFormat('2020/01/01 1 AM IST', 'strftime')).toBe('%Y/%m/%d %-l %p %Z');
 	});
 
-	test('# YYYY/MM/DD hA z', () => {
-		expect(guessFormat('2020/01/01 1AM IST')).toBe('YYYY/MM/DD hA z');
+	test('# yyyy/MM/DD hA z', () => {
+		expect(guessFormat('2020/01/01 1AM IST')).toBe('yyyy/MM/DD ha z');
 		expect(guessFormat('2020/01/01 1AM IST', 'strftime')).toBe('%Y/%m/%d %-l%p %Z');
 	});
 
-	test('# YYYY.MM.DD', () => {
-		expect(guessFormat('2020.01.01')).toBe('YYYY.MM.DD');
+	test('# yyyy.MM.DD', () => {
+		expect(guessFormat('2020.01.01')).toBe('yyyy.MM.DD');
 		expect(guessFormat('2020.01.01', 'strftime')).toBe('%Y.%m.%d');
 	});
 
-	test('# YYYY-MM-DD', () => {
-		expect(guessFormat('2020-01-01')).toBe('YYYY-MM-DD');
+	test('# yyyy-MM-DD', () => {
+		expect(guessFormat('2020-01-01')).toBe('yyyy-MM-DD');
 		expect(guessFormat('2020-01-01', 'strftime')).toBe('%Y-%m-%d');
 	});
 
-	test('# YYYY/MM', () => {
-		expect(guessFormat('2020/01')).toBe('YYYY/MM');
+	test('# yyyy/MM', () => {
+		expect(guessFormat('2020/01')).toBe('yyyy/MM');
 		expect(guessFormat('2020/01', 'strftime')).toBe('%Y/%m');
 	});
 
-	test('# YYYY.MM', () => {
-		expect(guessFormat('2020.01')).toBe('YYYY.MM');
+	test('# yyyy.MM', () => {
+		expect(guessFormat('2020.01')).toBe('yyyy.MM');
 		expect(guessFormat('2020.01', 'strftime')).toBe('%Y.%m');
 	});
 
-	test('# YYYY-MM', () => {
-		expect(guessFormat('2020-01')).toBe('YYYY-MM');
+	test('# yyyy-MM', () => {
+		expect(guessFormat('2020-01')).toBe('yyyy-MM');
 		expect(guessFormat('2020-01', 'strftime')).toBe('%Y-%m');
 	});
 
-	test('# YYYY/M/D', () => {
-		expect(guessFormat('2020/1/1')).toBe('YYYY/M/D');
+	test('# yyyy/M/D', () => {
+		expect(guessFormat('2020/1/1')).toBe('yyyy/M/D');
 		expect(() => guessFormat('2020/1/1', 'strftime')).toThrow();
 	});
 
-	test('# YYYY.M.D', () => {
-		expect(guessFormat('2020.1.1')).toBe('YYYY.M.D');
+	test('# yyyy.M.D', () => {
+		expect(guessFormat('2020.1.1')).toBe('yyyy.M.D');
 		expect(() => guessFormat('2020.1.1', 'strftime')).toThrow();
 	});
 
-	test('# YYYY-M-D', () => {
-		expect(guessFormat('2020-1-1')).toBe('YYYY-M-D');
+	test('# yyyy-M-D', () => {
+		expect(guessFormat('2020-1-1')).toBe('yyyy-M-D');
 		expect(() => guessFormat('2020-1-1', 'strftime')).toThrow();
 	});
 
-	test('# YYYY/M', () => {
-		expect(guessFormat('2020/1')).toBe('YYYY/M');
+	test('# yyyy/M', () => {
+		expect(guessFormat('2020/1')).toBe('yyyy/M');
 		expect(() => guessFormat('2020/1', 'strftime')).toThrow();
 	});
 
-	test('# YYYY.M', () => {
-		expect(guessFormat('2020.1')).toBe('YYYY.M');
+	test('# yyyy.M', () => {
+		expect(guessFormat('2020.1')).toBe('yyyy.M');
 		expect(() => guessFormat('2020.1', 'strftime')).toThrow();
 	});
 
-	test('# YYYY-M', () => {
-		expect(guessFormat('2020-1')).toBe('YYYY-M');
+	test('# yyyy-M', () => {
+		expect(guessFormat('2020-1')).toBe('yyyy-M');
 		expect(() => guessFormat('2020-1', 'strftime')).toThrow();
 	});
 
@@ -119,13 +119,13 @@ describe('Slash, dot or dash delimited date formats', () => {
 
 	// MM can be in [01, 12] | M can be in [1, 12]
 	// DD can be in [01, 31] | D can be in [1, 31]
-	// YYYY can be in [0000, 9999] | YY can be in [00, 99]
+	// yyyy can be in [0000, 9999] | yy can be in [00, 99]
 
 	test('# MM, DD in range [01, 12] slash delimited', () => {
 		let result = guessFormat('01/02/2020');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(2);
-		expect(result).toEqual(expect.arrayContaining(['MM/DD/YYYY', 'DD/MM/YYYY']));
+		expect(result).toEqual(expect.arrayContaining(['MM/DD/yyyy', 'DD/MM/yyyy']));
 
 		result = guessFormat('01/02/2020', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -138,7 +138,7 @@ describe('Slash, dot or dash delimited date formats', () => {
 		let result = guessFormat('01.02.2020');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(2);
-		expect(result).toEqual(expect.arrayContaining(['MM.DD.YYYY', 'DD.MM.YYYY']));
+		expect(result).toEqual(expect.arrayContaining(['MM.DD.yyyy', 'DD.MM.yyyy']));
 
 		result = guessFormat('01.02.2020', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -151,7 +151,7 @@ describe('Slash, dot or dash delimited date formats', () => {
 		let result = guessFormat('01-02-2020');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(2);
-		expect(result).toEqual(expect.arrayContaining(['MM-DD-YYYY', 'DD-MM-YYYY']));
+		expect(result).toEqual(expect.arrayContaining(['MM-DD-yyyy', 'DD-MM-yyyy']));
 
 		result = guessFormat('01-02-2020', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -161,57 +161,57 @@ describe('Slash, dot or dash delimited date formats', () => {
 	});
 
 	test('# MM in range [01, 12], DD in range [13, 31] slash delimted', () => {
-		expect(guessFormat('01/31/2020')).toBe('MM/DD/YYYY');
+		expect(guessFormat('01/31/2020')).toBe('MM/DD/yyyy');
 		expect(guessFormat('01/31/2020', 'strftime')).toBe('%m/%d/%Y');
 	});
 
 	test('# MM in range [01, 12], DD in range [13, 31] dot delimted', () => {
-		expect(guessFormat('01.31.2020')).toBe('MM.DD.YYYY');
+		expect(guessFormat('01.31.2020')).toBe('MM.DD.yyyy');
 		expect(guessFormat('01.31.2020', 'strftime')).toBe('%m.%d.%Y');
 	});
 
 	test('# MM in range [01, 12], DD in range [13, 31] dash delimted', () => {
-		expect(guessFormat('01-31-2020')).toBe('MM-DD-YYYY');
+		expect(guessFormat('01-31-2020')).toBe('MM-DD-yyyy');
 		expect(guessFormat('01-31-2020', 'strftime')).toBe('%m-%d-%Y');
 	});
 
-	test('# DD/MM/YYYY', () => {
-		expect(guessFormat('13/01/2020')).toBe('DD/MM/YYYY');
+	test('# DD/MM/yyyy', () => {
+		expect(guessFormat('13/01/2020')).toBe('DD/MM/yyyy');
 		expect(guessFormat('13/01/2020', 'strftime')).toBe('%d/%m/%Y');
 	});
 
-	test('# DD/MM/YYYY hh:mm a z', () => {
-		expect(guessFormat('13/01/2020 01:00 pm EST')).toBe('DD/MM/YYYY hh:mm a z');
+	test('# DD/MM/yyyy hh:mm a z', () => {
+		expect(guessFormat('13/01/2020 01:00 pm EST')).toBe('DD/MM/yyyy hh:mm a z');
 		expect(guessFormat('13/01/2020 01:00 pm EST', 'strftime')).toBe('%d/%m/%Y %I:%M %P %Z');
 	});
 
-	test('# DD.MM.YYYY', () => {
-		expect(guessFormat('13.01.2020')).toBe('DD.MM.YYYY');
+	test('# DD.MM.yyyy', () => {
+		expect(guessFormat('13.01.2020')).toBe('DD.MM.yyyy');
 		expect(guessFormat('13.01.2020', 'strftime')).toBe('%d.%m.%Y');
 	});
 
-	test('# DD-MM-YYYY', () => {
-		expect(guessFormat('13-01-2020')).toBe('DD-MM-YYYY');
+	test('# DD-MM-yyyy', () => {
+		expect(guessFormat('13-01-2020')).toBe('DD-MM-yyyy');
 		expect(guessFormat('13-01-2020', 'strftime')).toBe('%d-%m-%Y');
 	});
 
-	test('# DD-MMM-YYYY', () => {
-		expect(guessFormat('13-Jan-2020')).toBe('DD-MMM-YYYY');
+	test('# DD-MMM-yyyy', () => {
+		expect(guessFormat('13-Jan-2020')).toBe('DD-MMM-yyyy');
 		expect(guessFormat('13-Jan-2020', 'strftime')).toBe('%d-%b-%Y');
 	});
 
-	test('# DD-MMM-YYYY, hh:mm am|pm Z', () => {
-		expect(guessFormat('13-Jan-2020, 10:00 am IST')).toBe('DD-MMM-YYYY, hh:mm a z');
+	test('# DD-MMM-yyyy, hh:mm am|pm Z', () => {
+		expect(guessFormat('13-Jan-2020, 10:00 am IST')).toBe('DD-MMM-yyyy, hh:mm a z');
 		expect(guessFormat('13-Jan-2020, 10:00 am IST', 'strftime')).toBe('%d-%b-%Y, %I:%M %P %Z');
 	});
 
-	test('# DD-MMM-YY', () => {
-		expect(guessFormat('13-Jan-20')).toBe('DD-MMM-YY');
+	test('# DD-MMM-yy', () => {
+		expect(guessFormat('13-Jan-20')).toBe('DD-MMM-yy');
 		expect(guessFormat('13-Jan-20', 'strftime')).toBe('%d-%b-%y');
 	});
 
-	test('# DD-MMM-YY, ham|pm', () => {
-		expect(guessFormat('13-Jan-20, 1am')).toBe('DD-MMM-YY, ha');
+	test('# DD-MMM-yy, ham|pm', () => {
+		expect(guessFormat('13-Jan-20, 1am')).toBe('DD-MMM-yy, ha');
 		expect(guessFormat('13-Jan-20, 1am', 'strftime')).toBe('%d-%b-%y, %-l%P');
 	});
 
@@ -221,11 +221,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		}).toThrow(new Error("Couldn't parse date"));
 	});
 
-	test('# MM, DD, YY in range [01, 12] slash delimited', () => {
+	test('# MM, DD, yy in range [01, 12] slash delimited', () => {
 		let result = guessFormat('01/02/03');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY/MM/DD', 'MM/DD/YY', 'DD/MM/YY']));
+		expect(result).toEqual(expect.arrayContaining(['yy/MM/DD', 'MM/DD/yy', 'DD/MM/yy']));
 
 		result = guessFormat('01/02/03', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -234,11 +234,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 
 	});
 
-	test('# MM, DD, YY in range [01, 12] slash delimited with time', () => {
+	test('# MM, DD, yy in range [01, 12] slash delimited with time', () => {
 		let result = guessFormat('01/02/03 10:00 PM');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY/MM/DD hh:mm A', 'MM/DD/YY hh:mm A', 'DD/MM/YY hh:mm A']));
+		expect(result).toEqual(expect.arrayContaining(['yy/MM/DD hh:mm a', 'MM/DD/yy hh:mm a', 'DD/MM/yy hh:mm a']));
 
 		result = guessFormat('01/02/03 10:00 PM', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -247,11 +247,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 
 	});
 
-	test('# MM, DD, YY in range [01, 12] dot delimited', () => {
+	test('# MM, DD, yy in range [01, 12] dot delimited', () => {
 		let result = guessFormat('01.02.03');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(4);
-		expect(result).toEqual(expect.arrayContaining(['YY.MM.DD', 'MM.DD.YY', 'DD.MM.YY', 'HH.mm.ss']));
+		expect(result).toEqual(expect.arrayContaining(['yy.MM.DD', 'MM.DD.yy', 'DD.MM.yy', 'HH.mm.ss']));
 
 		result = guessFormat('01.02.03', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -259,11 +259,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		expect(result).toEqual(expect.arrayContaining(["%y.%m.%d", "%d.%m.%y", "%m.%d.%y", "%H.%M.%S"]));
 	});
 
-	test('# MM, DD, YY in range [01, 12] dot delimited with colon delimited time', () => {
+	test('# MM, DD, yy in range [01, 12] dot delimited with colon delimited time', () => {
 		let result = guessFormat('01.02.03 10:00 PDT');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY.MM.DD HH:mm z', 'MM.DD.YY HH:mm z', 'DD.MM.YY HH:mm z']));
+		expect(result).toEqual(expect.arrayContaining(['yy.MM.DD HH:mm z', 'MM.DD.yy HH:mm z', 'DD.MM.yy HH:mm z']));
 
 		result = guessFormat('01.02.03 10:00 PDT', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -272,11 +272,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 
 	});
 
-	test('# MM, DD, YY in range [01, 12] dot delimited with dot delimited time', () => {
+	test('# MM, DD, yy in range [01, 12] dot delimited with dot delimited time', () => {
 		let result = guessFormat('01.02.03 10.00 PDT');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY.MM.DD HH.mm z', 'MM.DD.YY HH.mm z', 'DD.MM.YY HH.mm z']));
+		expect(result).toEqual(expect.arrayContaining(['yy.MM.DD HH.mm z', 'MM.DD.yy HH.mm z', 'DD.MM.yy HH.mm z']));
 
 		result = guessFormat('01.02.03 10.00 PDT', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -284,11 +284,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		expect(result).toEqual(expect.arrayContaining(["%y.%m.%d %H.%M %Z", "%d.%m.%y %H.%M %Z", "%m.%d.%y %H.%M %Z"]));
 	});
 
-	test('# MM, DD, YY in range [01, 12] dash delimited', () => {
+	test('# MM, DD, yy in range [01, 12] dash delimited', () => {
 		let result = guessFormat('01-02-03');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY-MM-DD', 'MM-DD-YY', 'DD-MM-YY']));
+		expect(result).toEqual(expect.arrayContaining(['yy-MM-DD', 'MM-DD-yy', 'DD-MM-yy']));
 
 		result = guessFormat('01-02-03', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -296,11 +296,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		expect(result).toEqual(expect.arrayContaining(["%y-%m-%d", "%d-%m-%y", "%m-%d-%y"]));
 	})
 
-	test('# YY in range [13, 31] placed first, slash delimited', () => {
+	test('# yy in range [13, 31] placed first, slash delimited', () => {
 		let result = guessFormat('13/02/01');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(2);
-		expect(result).toEqual(expect.arrayContaining(['YY/MM/DD', 'DD/MM/YY']));
+		expect(result).toEqual(expect.arrayContaining(['yy/MM/DD', 'DD/MM/yy']));
 
 		result = guessFormat('13/02/01', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -308,11 +308,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		expect(result).toEqual(expect.arrayContaining(["%y/%m/%d", "%d/%m/%y"]));
 	});
 
-	test('# YY in range [13, 31] placed first, dot delimited', () => {
+	test('# yy in range [13, 31] placed first, dot delimited', () => {
 		let result = guessFormat('13.02.01');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY.MM.DD', 'DD.MM.YY', 'HH.mm.ss']));
+		expect(result).toEqual(expect.arrayContaining(['yy.MM.DD', 'DD.MM.yy', 'HH.mm.ss']));
 
 		result = guessFormat('13.02.01', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -321,48 +321,48 @@ describe('Slash, dot or dash delimited date formats', () => {
 
 	});
 
-	test('# DD/MM/YY', () => {
-		expect(guessFormat('31/01/70')).toBe('DD/MM/YY');
+	test('# DD/MM/yy', () => {
+		expect(guessFormat('31/01/70')).toBe('DD/MM/yy');
 		expect(guessFormat('31/01/70', 'strftime')).toBe('%d/%m/%y');
 	});
 
-	test('# DD.MM.YY', () => {
-		expect(guessFormat('31.01.70')).toBe('DD.MM.YY');
+	test('# DD.MM.yy', () => {
+		expect(guessFormat('31.01.70')).toBe('DD.MM.yy');
 		expect(guessFormat('31.01.70', 'strftime')).toBe('%d.%m.%y');
 	});
 
-	test('# DD-MM-YY', () => {
-		expect(guessFormat('31-01-70')).toBe('DD-MM-YY');
+	test('# DD-MM-yy', () => {
+		expect(guessFormat('31-01-70')).toBe('DD-MM-yy');
 		expect(guessFormat('31-01-70', 'strftime')).toBe('%d-%m-%y');
 	});
 
-	test('# MM/DD/YY', () => {
-		expect(guessFormat('12/31/70')).toBe('MM/DD/YY');
+	test('# MM/DD/yy', () => {
+		expect(guessFormat('12/31/70')).toBe('MM/DD/yy');
 		expect(guessFormat('12/31/70', 'strftime')).toBe('%m/%d/%y');
 	});
 
-	test('# MM.DD.YY', () => {
-		expect(guessFormat('12.31.70')).toBe('MM.DD.YY');
+	test('# MM.DD.yy', () => {
+		expect(guessFormat('12.31.70')).toBe('MM.DD.yy');
 		expect(guessFormat('12.31.70', 'strftime')).toBe('%m.%d.%y');
 	});
 
-	test('# MM-DD-YY', () => {
-		expect(guessFormat('12-31-70')).toBe('MM-DD-YY');
+	test('# MM-DD-yy', () => {
+		expect(guessFormat('12-31-70')).toBe('MM-DD-yy');
 		expect(guessFormat('12-31-70', 'strftime')).toBe('%m-%d-%y');
 	});
 
-	test('# YY/MM/DD', () => {
-		expect(guessFormat('70/12/31')).toBe('YY/MM/DD');
+	test('# yy/MM/DD', () => {
+		expect(guessFormat('70/12/31')).toBe('yy/MM/DD');
 		expect(guessFormat('70/12/31', 'strftime')).toBe('%y/%m/%d');
 	});
 
-	test('# YY.MM.DD', () => {
-		expect(guessFormat('70.12.31')).toBe('YY.MM.DD');
+	test('# yy.MM.DD', () => {
+		expect(guessFormat('70.12.31')).toBe('yy.MM.DD');
 		expect(guessFormat('70.12.31', 'strftime')).toBe('%y.%m.%d');
 	});
 
-	test('# YY-MM-DD', () => {
-		expect(guessFormat('70-12-31')).toBe('YY-MM-DD');
+	test('# yy-MM-DD', () => {
+		expect(guessFormat('70-12-31')).toBe('yy-MM-DD');
 		expect(guessFormat('70-12-31', 'strftime')).toBe('%y-%m-%d');
 	});
 
@@ -370,7 +370,7 @@ describe('Slash, dot or dash delimited date formats', () => {
 		let result = guessFormat('01/01');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY/MM', 'DD/MM', 'MM/DD']));
+		expect(result).toEqual(expect.arrayContaining(['yy/MM', 'DD/MM', 'MM/DD']));
 
 		result = guessFormat('01/01', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -382,7 +382,7 @@ describe('Slash, dot or dash delimited date formats', () => {
 		let result = guessFormat('01.01');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(4);
-		expect(result).toEqual(expect.arrayContaining(['YY.MM', 'DD.MM', 'MM.DD', 'HH.mm']));
+		expect(result).toEqual(expect.arrayContaining(['yy.MM', 'DD.MM', 'MM.DD', 'HH.mm']));
 
 		result = guessFormat('01.01', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -394,7 +394,7 @@ describe('Slash, dot or dash delimited date formats', () => {
 		let result = guessFormat('01-01');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(3);
-		expect(result).toEqual(expect.arrayContaining(['YY-MM', 'DD-MM', 'MM-DD']));
+		expect(result).toEqual(expect.arrayContaining(['yy-MM', 'DD-MM', 'MM-DD']));
 
 		result = guessFormat('01-01', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -424,11 +424,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		expect(guessFormat('12-31', 'strftime')).toBe('%m-%d');
 	});
 
-	test('# DD/MM | YY/MM', () => {
+	test('# DD/MM | yy/MM', () => {
 		let result = guessFormat('31/12');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(2);
-		expect(result).toEqual(expect.arrayContaining(['DD/MM', 'YY/MM']));
+		expect(result).toEqual(expect.arrayContaining(['DD/MM', 'yy/MM']));
 
 		result = guessFormat('31/12', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -436,11 +436,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		expect(result).toEqual(expect.arrayContaining(["%y/%m", "%d/%m"]));
 	});
 
-	test('# DD.MM | YY.MM', () => {
+	test('# DD.MM | yy.MM', () => {
 		let result = guessFormat('31.12');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(2);
-		expect(result).toEqual(expect.arrayContaining(['DD.MM', 'YY.MM']));
+		expect(result).toEqual(expect.arrayContaining(['DD.MM', 'yy.MM']));
 
 		result = guessFormat('31.12', 'strftime');
 		expect(result).toBeInstanceOf(Array);
@@ -448,11 +448,11 @@ describe('Slash, dot or dash delimited date formats', () => {
 		expect(result).toEqual(expect.arrayContaining(["%y.%m", "%d.%m"]));
 	});
 
-	test('# DD-MM | YY-MM', () => {
+	test('# DD-MM | yy-MM', () => {
 		let result = guessFormat('31-12');
 		expect(result).toBeInstanceOf(Array);
 		expect(result).toHaveLength(2);
-		expect(result).toEqual(expect.arrayContaining(['DD-MM', 'YY-MM']));
+		expect(result).toEqual(expect.arrayContaining(['DD-MM', 'yy-MM']));
 
 		result = guessFormat('31-12', 'strftime');
 		expect(result).toBeInstanceOf(Array);

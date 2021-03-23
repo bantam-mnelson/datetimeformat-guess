@@ -32,7 +32,7 @@ describe('Day of month followed by month name type dates', () => {
 	});
 
 	test('# D Mon, hh:mm:ss AM|PM', () => {
-		expect(guessFormat('1 Jan, 10:00:59 AM')).toBe('D MMM, hh:mm:ss A');
+		expect(guessFormat('1 Jan, 10:00:59 AM')).toBe('D MMM, hh:mm:ss a');
 		expect(guessFormat('1 Jan, 10:00:59 AM', 'strftime')).toBe('%-e %b, %I:%M:%S %p');
 	});
 
@@ -73,12 +73,12 @@ describe('Day of month followed by month name type dates', () => {
 	});
 
 	test('# full month name, day of month with ordinal, hhAM|PM', () => {
-		expect(guessFormat('31st January, 10AM')).toBe('Do MMMM, hhA');
+		expect(guessFormat('31st January, 10AM')).toBe('Do MMMM, hha');
 		expect(guessFormat('31st January, 10AM', 'strftime')).toBe('%o %B, %I%p');
 	});
 
 	test('# full month name, day of month with ordinal, hAM|PM', () => {
-		expect(guessFormat('31st January, 1AM')).toBe('Do MMMM, hA');
+		expect(guessFormat('31st January, 1AM')).toBe('Do MMMM, ha');
 		expect(guessFormat('31st January, 1AM', 'strftime')).toBe('%o %B, %-l%p');
 	});
 
@@ -105,47 +105,47 @@ describe('Day of month followed by month name type dates', () => {
 	});
 
 	test('# append year (short)', () => {
-		expect(guessFormat('31st January, 20')).toBe('Do MMMM, YY');
+		expect(guessFormat('31st January, 20')).toBe('Do MMMM, yy');
 		expect(guessFormat('31st January, 20', 'strftime')).toBe('%o %B, %y');
 	});
 
 	test('# append year (short), hh:mm am|pm', () => {
-		expect(guessFormat('31st January, 20 10:00 am')).toBe('Do MMMM, YY hh:mm a');
+		expect(guessFormat('31st January, 20 10:00 am')).toBe('Do MMMM, yy hh:mm a');
 		expect(guessFormat('31st January, 20 10:00 am', 'strftime')).toBe('%o %B, %y %I:%M %P');
 	});
 
 	test('# append year (short), HH:mm', () => {
-		expect(guessFormat('31st January, 20 10:00')).toBe('Do MMMM, YY HH:mm');
+		expect(guessFormat('31st January, 20 10:00')).toBe('Do MMMM, yy HH:mm');
 		expect(guessFormat('31st January, 20 10:00', 'strftime')).toBe('%o %B, %y %H:%M');
 	});
 
 	test('# append year', () => {
-		expect(guessFormat('31st January, 2020')).toBe('Do MMMM, YYYY');
+		expect(guessFormat('31st January, 2020')).toBe('Do MMMM, yyyy');
 		expect(guessFormat('31st January, 2020', 'strftime')).toBe('%o %B, %Y');
 	});
 
 	test('# full date', () => {
-		expect(guessFormat('Sunday, 31st January 2020')).toBe('dddd, Do MMMM YYYY');
+		expect(guessFormat('Sunday, 31st January 2020')).toBe('dddd, Do MMMM yyyy');
 		expect(guessFormat('Sunday, 31st January 2020', 'strftime')).toBe('%A, %o %B %Y');
 	});
 
 	test('# full date, hhAM|PM', () => {
-		expect(guessFormat('Sunday, 31st January 2020, 09:00AM')).toBe('dddd, Do MMMM YYYY, hh:mmA');
+		expect(guessFormat('Sunday, 31st January 2020, 09:00AM')).toBe('dddd, Do MMMM yyyy, hh:mma');
 		expect(guessFormat('Sunday, 31st January 2020, 09:00AM', 'strftime')).toBe('%A, %o %B %Y, %I:%M%p');
 	});
 
 	test('# full date, hhAM|PM', () => {
-		expect(guessFormat('Sunday, 31st January 2020, 9AM')).toBe('dddd, Do MMMM YYYY, hA');
+		expect(guessFormat('Sunday, 31st January 2020, 9AM')).toBe('dddd, Do MMMM yyyy, ha');
 		expect(guessFormat('Sunday, 31st January 2020, 9AM', 'strftime')).toBe('%A, %o %B %Y, %-l%p');
 	});
 
 	test('# full date, HH:mm', () => {
-		expect(guessFormat('Sunday, 31st January 2020, 09:00')).toBe('dddd, Do MMMM YYYY, HH:mm');
+		expect(guessFormat('Sunday, 31st January 2020, 09:00')).toBe('dddd, Do MMMM yyyy, HH:mm');
 		expect(guessFormat('Sunday, 31st January 2020, 09:00', 'strftime')).toBe('%A, %o %B %Y, %H:%M');
 	});
 
 	test('# full date with abbreviated timezone', () => {
-		expect(guessFormat('Sunday, 31st January 2020, 09:00 IST')).toBe('dddd, Do MMMM YYYY, HH:mm z');
+		expect(guessFormat('Sunday, 31st January 2020, 09:00 IST')).toBe('dddd, Do MMMM yyyy, HH:mm z');
 		expect(guessFormat('Sunday, 31st January 2020, 09:00 IST', 'strftime')).toBe('%A, %o %B %Y, %H:%M %Z');
 	})
 });

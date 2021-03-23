@@ -41,10 +41,10 @@ npm install datetimeformat-guess
 const guessFormat = require('datetimeformat-guess');
 
 // default format
-console.log(guessFormat("31/12/2020")); // DD/MM/YYYY
+console.log(guessFormat("31/12/2020")); // DD/MM/yyyy
 
 // default format
-console.log(guessFormat("01/01/2020 10:00 AM PST", "default")); // [ 'DD/MM/YYYY hh:mm A z', 'MM/DD/YYYY hh:mm A z' ]
+console.log(guessFormat("01/01/2020 10:00 AM PST", "default")); // [ 'DD/MM/yyyy hh:mm a z', 'MM/DD/yyyy hh:mm a z' ]
 
 // strftime format
 console.log(guessFormat("Fri, January 30th 2020, 10:00 AM", "strftime")); // %a, %B %o %Y, %I:%M %p
@@ -77,14 +77,6 @@ try {
 ## 🤷‍♀️ What happens in case of ambiguous input?
 If the input is ambiguous like 01/01/2020(could mean DD/MM/YYYY or MM/DD/YYYY), **it would display all possible matched formats**. Try `npx -q datetimeformat-guess -d "01/01/2020"`
 
-## :thinking: Motivation
-
-**PM**: *Hey, could you please display date on the rightmost part of the row in a format similar to Fri, 6th March 2020, 10:00 AM?*
-
-**Me**: *Sure. (types on screen ... moment(timestampFromDB).format(// Uh Oh!, what should I put here?))*
-
-**Methinks**: *Hmm...such requirements pop up once in a while, not everyday(at least for me). And everytime it happens, I end up sifting through momentjs docs [here](https://momentjs.com/docs/#/displaying/) to choose the right format tokens in order to display date in the desired format("ddd, Do MMMM YYYY, hh:mm A" in this case). Can this be avoided? Is it possible to guess a date's format from the desired date value itself?*
-
 ## :hammer: Run tests
 
 ```sh
@@ -104,10 +96,9 @@ Entire module is split up into three main components, _parsers_, _refiners_ and 
 
 ## :man: Author
 
-**Apoorv Mishra**
+**Mark Nelson**
 
 * Github: [@bantam-mnelson](https://github.com/bantam-mnelson)
-* LinkedIn: [Apoorv Mishra](https://www.linkedin.com/in/bantam-mnelson-76a06249/)
 
 ## 🤝 Contributing
 
@@ -117,13 +108,8 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 
 Give a ⭐️ if this project helped you!
 
-<a href="https://www.patreon.com/apoorvmishra">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
-
 ## 📝 License
 
-Copyright © 2020 [Apoorv Mishra](https://github.com/bantam-mnelson).<br />
 This project is [MIT](https://github.com/bantam-mnelson/datetimeformat-guess/blob/master/LICENSE) licensed.
 
 ***
