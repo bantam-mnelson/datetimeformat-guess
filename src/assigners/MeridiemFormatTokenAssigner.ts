@@ -18,7 +18,7 @@ class MeridiemFormatTokenAssigner implements IAssigner {
 
 		if (!format || format === 'default') {
 			this._map.set(/am|pm/, 'a');
-			this._map.set(/AM|PM/, 'A');
+			this._map.set(/AM|PM/, 'a');
 		} else {
 			this._map.set(/am|pm/, '%P');
 			this._map.set(/AM|PM/, '%p');
